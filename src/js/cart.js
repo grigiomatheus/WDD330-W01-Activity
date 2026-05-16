@@ -8,7 +8,8 @@ function renderCartContents() {
   if (!listElement) return;
 
   if (cartItems.length === 0) {
-    listElement.innerHTML = "<li class=\"cart-card divider\">Your cart is empty.</li>";
+    listElement.innerHTML =
+      "<li class=\"cart-card divider\">Your cart is empty.</li>";
     if (cartFooter) cartFooter.classList.add("hide");
     return;
   }
@@ -23,7 +24,8 @@ function renderCartContents() {
   if (cartFooter) {
     cartFooter.classList.remove("hide");
     const total = cartItems.reduce((sum, item) => sum + item.FinalPrice, 0);
-    cartFooter.querySelector(".cart-total").innerHTML = `Total: $${total.toFixed(2)}`;
+    cartFooter.querySelector(".cart-total").innerHTML =
+      `Total: $${total.toFixed(2)}`;
   }
 }
 
