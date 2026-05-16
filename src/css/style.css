@@ -123,6 +123,11 @@ button {
   text-align: center;
 }
 
+.cart a {
+  position: relative;
+  display: inline-block;
+}
+
 .cart svg {
   width: 25px;
 }
@@ -260,4 +265,54 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1em 0;
+}
+
+.cart-total {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.hide {
+  display: none !important;
+}
+
+.cart-card__remove {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  cursor: pointer;
+  font-size: 1em;
+  color: #888;
+  line-height: 1;
+}
+
+.cart-card__remove:hover {
+  color: #c00;
+}
+
+.cart-card {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -0.5em;
+  right: -0.5em;
+  background: var(--secondary-color, #f26522);
+  color: #fff;
+  border-radius: 50%;
+  width: 1.4em;
+  height: 1.4em;
+  font-size: 0.75em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
 }

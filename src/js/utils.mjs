@@ -30,8 +30,22 @@ export function getParam(param) {
   return product
 }
 
-export function renderListWithTemplate(template, parentElement, list, position = "afterbegin", clear = false) {
-  const htmlStrings = list.map(template);
+export function updateCartCount() {
+  const cartItems = getLocalStorage("so-cart") || [];
+  const count = cartItems.length;
+  let badge = document.querySelector(".cart-count");
+  if (!badge) {
+    badge = document.createElement("span");
+    badge.classList.add("cart-count");
+    const cartLink = document.querySelector(".cart a");
+    if (cartLink) cartLink.appendChild(badge);
+  }
+  badge.textContent = count > 0 ? count : "";
+  badge.style.display = count > 0 ? "flex" : "none";
+}
+
+export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false) {
+  const htmlStrings = list.map(templateFn);
   // if clear is true we need to clear out the contents of the parent.
   if (clear) {
     parentElement.innerHTML = "";
