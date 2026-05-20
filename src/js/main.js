@@ -1,6 +1,8 @@
 import ProductData from "./ProductData.mjs";
 import ProductList from "./ProductList.mjs";
-import { updateCartCount } from "./utils.mjs";
+import { updateCartCount, loadHeaderFooter } from "./utils.mjs";
+
+await loadHeaderFooter();
 
 const tentsData = new ProductData("tents");
 const tentsList = new ProductList(
